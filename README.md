@@ -13,9 +13,9 @@ def _exec_with_pipe(self, source):
                 ret = p.wait()
             finally:
                 del p
-- 需要添加两句代码 
+-需要添加两句代码 
 
-```python
+
 def _exec_with_pipe(self, source):
             cmd = self._runtime._binary()
             p = None
@@ -30,4 +30,4 @@ def _exec_with_pipe(self, source):
                 ret = p.wait()
             finally:
                 del p
-##### 改完再重新打包就不会有cmd黑框了                
+####改完再重新打包就不会有cmd黑框了                

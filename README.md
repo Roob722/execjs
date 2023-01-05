@@ -1,6 +1,7 @@
-##解决pyinstaller 打包含有PyExecJS的项目运行有CMD弹框问题！
+## 解决pyinstaller 打包含有PyExecJS的项目运行有CMD弹框问题！
 ### 在_external_runtime.py的文件里有这样一句代码
-```        def _exec_with_pipe(self, source):
+```python   
+def _exec_with_pipe(self, source):
             cmd = self._runtime._binary()
             p = None
             try:
@@ -13,7 +14,9 @@
             finally:
                 del p
 - 需要添加两句代码 
-```        def _exec_with_pipe(self, source):
+
+```python
+def _exec_with_pipe(self, source):
             cmd = self._runtime._binary()
             p = None
             try:
@@ -27,4 +30,4 @@
                 ret = p.wait()
             finally:
                 del p
-#####改完再重新打包就不会有cmd黑框了                
+##### 改完再重新打包就不会有cmd黑框了                
